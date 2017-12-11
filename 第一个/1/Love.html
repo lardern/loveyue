@@ -47,7 +47,7 @@
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <audio src="love.mp3" autoplay="autoplay" ></audio>
+            <audio id="background_music" src="love.mp3" loop></audio>
         </div>
     
     <script>
@@ -70,6 +70,7 @@
     	});        
     })();
     function init(){
+        document.getElementById('background_music').play();
     	var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
