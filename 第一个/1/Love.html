@@ -55,7 +55,22 @@
 
     <script>
     (function(){
-        var canvas = $('#canvas');
+    	var code=[56,55,49,48];
+    	var index=0;
+        $(document).focus();
+    	$(document).keypress(function(event){
+    		if(event.which==code[index]){
+    			index++;
+    		}else{
+    			index=0;
+    		}
+    		if(index==code.length){
+    			init();
+    		}
+    	});        
+    })();
+    function init(){
+    	var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
             $("#error").show();
@@ -210,7 +225,7 @@
         }));
 
         runAsync().start();
-    })();
+    }
     </script>
 
 
